@@ -13,10 +13,10 @@ after_success:
   - docker build -t brandonessex/multi-nginx ./nginx
   - docker build -t brandonessex/multi-server ./server
   - docker build -t brandonessex/multi-worker ./worker
-# Log in to the docker CLI
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-# Take those images and push them to docker hub
-- docker push -t brandonessex/multi-client
-- docker push -t brandonessex/multi-nginx
-- docker push -t brandonessex/multi-server
-- docker push -t brandonessex/multi-worker
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push them to docker hub
+  - docker push -t brandonessex/multi-client
+  - docker push -t brandonessex/multi-nginx
+  - docker push -t brandonessex/multi-server
+  - docker push -t brandonessex/multi-worker
